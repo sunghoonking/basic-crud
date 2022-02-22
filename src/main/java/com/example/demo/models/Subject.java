@@ -1,6 +1,7 @@
 package com.example.demo.models;
 
 
+import com.example.demo.dto.SubjectDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,7 +22,15 @@ public class Subject {
     @Column(nullable = false)
     private String subject;
 
+    @ManyToOne
+    @JoinColumn(name = "studentId", nullable = true)
+    private Student student;
 
+
+    public Subject(SubjectDto subjectDto){
+
+        this.subject = subjectDto.getSubject();
+    }
 
 
 

@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-
 public class Professor {
 
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,6 +23,8 @@ public class Professor {
     @Column(nullable = false)
     private int age;
 
+    @Column(nullable = false)
+    private String subject;
 
 
 }

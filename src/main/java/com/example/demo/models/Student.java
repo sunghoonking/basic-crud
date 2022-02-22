@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Setter
@@ -27,10 +29,18 @@ public class Student {
     @Column(nullable = false)
     private int age;
 
+    @Column(nullable = false)
+    private String address;
+
+   @OneToMany(mappedBy = "student")
+    List<Subject> subjects = new ArrayList<>();
+
+
     public Student(StudentDto studentDto){
         this.name = studentDto.getName();
         this.age = studentDto.getAge();
         this.subject = studentDto.getSubject();
+        this.address = studentDto.getAddress();
     }
     public Student update(StudentDto studentDto){
         this.name = studentDto.getName();

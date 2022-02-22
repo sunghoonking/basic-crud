@@ -10,6 +10,7 @@ public class StudentDto {
     private String name;
     private String subject;
     private int age;
+    private String address;
 
 
 }

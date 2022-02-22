@@ -20,9 +20,9 @@ public class StudentController {
     @PostMapping("/api/students")
     public void setStudentInfo(@RequestBody StudentDto studentDto){
         studentService.setStudentInfo(studentDto);
-
-
     }
+
+
     @GetMapping("/api/students")
     public List<Student> getStudents(){
         return studentRepository.findAll();
@@ -38,10 +38,21 @@ public class StudentController {
     public Long deleteStudent(@PathVariable Long id){
         return studentService.deleteStudent(id);
 
-
     }
 
 
+//    @DeleteMapping("/api/students/{id}")
+//    public List<String> deleteStudent(@PathVariable List<String> id){
+//
+//        return studentService.deleteStudent(id);
+//    }
 
+
+//    @ResponseBody
+//    @DeleteMapping("/api/students/{id}")
+//    public List<String> deleteStu(@RequestBody List<String> studentIdxArray){
+//        StudentService.delete(studentIdxArray);
+//        return studentIdxArray;
+//    }
 
 }

@@ -45,7 +45,7 @@ public class UserApiController {
         authenticate(userDto.getUsername(), userDto.getPassword());
         final UserDetails userDetails = userDetailsService.loadUserByUsername(userDto.getUsername());
         final String token = jwtTokenUtil.generateToken(userDetails);
-        return ResponseEntity.ok(new JwtResponse(token, userDetails.getUsername()));
+        return ResponseEntity.ok("회원가입 완료");
     }
 
 
